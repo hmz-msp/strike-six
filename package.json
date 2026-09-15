@@ -1,0 +1,1 @@
+{"name":"strike-six","version":"1.0.0","private":true,"type":"module","scripts":{"start":"node server.mjs","test":"node --test tests/*.test.mjs","build":"node scripts/build.mjs"},"dependencies":{"three":"0.180.0","ws":"8.18.3"},"engines":{"node":">=22"}}

@@ -1,0 +1,4 @@
+import {World,DT} from './shared/engine.js';
+let world=null,ticks=0;
+onmessage=({data:m})=>{try{if(m.type==='join'){world=new World(m.settings);world.addPlayer('local',m.name);world.loadout('local',m.loadout||{});for(let i=0;i<(m.bots??1);i++)world.addPlayer('bot'+i,['Viper','Ghost','Rook','Echo','Atlas'][i],true);postMessage({type:'joined',id:'local',code:'PRACTICE',practice:true});}if(!world)return;if(m.type==='input')world.setInput('local',m);if(m.type==='action')world.action('local',m.action);if(m.type==='loadout')world.loadout('local',m.loadout);if(m.type==='restart')world.restart();}catch(e){postMessage({type:'error',message:e.message});}};
+setInterval(()=>{if(!world)return;world.step(DT);if(++ticks%3===0)postMessage({type:'state',...world.snapshot(),events:world.drain()});},1000/60);

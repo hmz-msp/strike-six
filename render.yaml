@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: strike-six
+    runtime: node
+    plan: free
+    buildCommand: npm install --omit=dev && npm run build
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: ADMIN_PASSWORD
+        value: pakiboys
+      - key: MAX_ROOMS
+        value: 20
