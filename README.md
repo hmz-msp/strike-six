@@ -90,3 +90,19 @@ Run `npm test` for the gameplay and real WebSocket integration checks. Verified 
 Third-party libraries retain their own licenses; see THIRD-PARTY-NOTICES.md. No Valve code, models, maps, textures or sounds are distributed.
 
 The current Sites publication serves the browser game and local practice. A separately hosted multiplayer server must also run the updated source to receive gameplay-rule changes.
+
+## Latest update
+
+- Overhead health bars and numbers are removed. Player avatars now have stylized female faces, hair, fitted tactical uniforms, articulated limb movement and smoother turning.
+- Muzzle flash animation and visual gun recoil are improved; perfect crosshair accuracy is unchanged.
+- Practice setup offers Easy, Medium and Hard bot difficulty, saved on this browser. Difficulty changes reaction delay, tracking and firing bursts.
+- Eliminations show a confirmation with the opponent's name.
+- Weapon selection uses a colored illustration atlas instead of wireframe previews. Illustrations are stylized inventory art.
+- To drive: include the DB12-inspired spy car in your loadout, equip it, then open the match menu (Escape) and select Drive car. Resume to drive. Forward/back accelerate/reverse; left/right steer using your saved movement bindings. Open the match menu and choose Exit car to return to walking. Entering requires open ground. Space or left mouse fires the mounted guns. Cars have 200 HP; four separate 50-damage impacts destroy a car, while two eliminate a player on foot.
+- Car impacts remove half the configured maximum health, bypassing armor. Two separate impacts kill a full-health player. Continuous overlap counts once. Spawn protection and friendly-fire rules still apply.
+
+The updated multiplayer server source is included; redeploy it alongside the browser assets to enable the car online.
+
+Car driving update: smooth acceleration, braking with the walk key (Shift by default), slower reverse with reversed steering, no stationary spinning, solid corner collisions, and a third-person chase camera with an overhead fallback near walls. The HUD shows speed while driving; the loadout includes a new car illustration.
+
+Visual update: silver DB12-inspired spy coupe, detailed first-person AK-47 and weapon surfaces, and athletic female avatars in tactical crop tops and shorts. Existing maps, aim, hitboxes and animation rig are preserved.
